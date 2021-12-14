@@ -1,0 +1,55 @@
+button {
+  color: #fff;
+  background-color: #4056A1;
+  border: none;
+  font-family: 'Bungee', cursive;
+  padding: 6px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.new-tweet > form {
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+}
+
+.new-tweet > form > label {
+  padding-bottom: 14px;
+}
+
+.new-tweet > form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+}
+
+#tweet-text {
+  outline: none;
+  resize: none;
+  border: none;
+  background-color: #f4f1ec;
+  border-bottom: 2px solid #545149;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #545149;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+  font-size: 20px;
+}

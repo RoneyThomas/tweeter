@@ -9,7 +9,7 @@ nav {
   align-items: center;
 }
 
-nav span {
+nav > span {
   font-family: 'Bungee', cursive;
 }
 
@@ -39,6 +39,6 @@ header {
   color: #FFFFFF;
 }
 
-#last-name {
+.light-last-word {
   font-weight: normal;
 }
