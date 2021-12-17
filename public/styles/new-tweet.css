@@ -20,10 +20,16 @@ button:active {
   transform: translateY(0);
 }
 
+.new-tweet {
+  padding-top: 24px;
+}
+
 .new-tweet > form {
   display: flex;
   flex-direction: column;
   font-weight: bolder;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .new-tweet > form > label {
@@ -43,7 +49,7 @@ button:active {
   border: none;
   background-color: #f4f1ec;
   border-bottom: 2px solid #545149;
-  height: 30px;
+  height: 60px;
   font-size: 20px;
   font-weight: bold;
   color: #545149;
@@ -52,4 +58,8 @@ button:active {
 .counter {
   font-family: 'Bungee', cursive;
   font-size: 20px;
+}
+
+.counter-over-limit {
+  color: red;
 }

@@ -24,7 +24,7 @@ nav > span {
   margin-block-end: 0.2em;
 }
 
-header {
+#main-head {
   z-index: -1;
   /* position: absolute; */
   height: 400px;

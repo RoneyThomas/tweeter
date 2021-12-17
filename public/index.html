@@ -25,6 +25,9 @@
   <!-- New Tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+  <!-- Tweet CSS -->
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -35,6 +38,9 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -47,7 +53,7 @@
     </div>
   </nav>
 
-  <header>
+  <header id="main-head">
     <div id="head">
       <div>
         <img src="/images/profile-hex.png">
@@ -69,6 +75,30 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+    <section class="tweet-container">
+      <article>
+        <header>
+          <div class="profile">
+            <i class="fas fa-user"></i>
+            <p class="name">Roney Thomas</p>
+          </div>
+          <p class="handle">@roney</p>
+        </header>
+        <p class="tweet-text">With CSS, you have full control over the padding. There are properties for setting the
+          padding for each side of an element (top, right, bottom, and left).</p>
+        <footer>
+          <hr>
+          <div class="tweet-footer">
+            <p class="tweet-time">2 Days Ago</p>
+            <div class="tweet-icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+        </footer>
+      </article>
     </section>
   </main>
 </body>
