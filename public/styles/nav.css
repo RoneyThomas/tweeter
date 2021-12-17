@@ -1,16 +1,20 @@
 nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  justify-content: space-between;
-  align-items: center;
 }
 
 nav > span {
   font-family: 'Bungee', cursive;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #new-tweet {
@@ -27,6 +31,7 @@ nav > span {
 #main-head {
   z-index: -1;
   /* position: absolute; */
+  padding-top: 120px;
   height: 400px;
   width: 100%;
   background: url('../images/black-thread-light.png'), #d79922;
@@ -37,6 +42,14 @@ nav > span {
   flex-direction: column;
   align-items: center;
   color: #FFFFFF;
+}
+
+#main-head #head div > img {
+  display: block;
+  max-width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .light-last-word {
