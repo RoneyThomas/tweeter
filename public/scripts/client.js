@@ -61,6 +61,27 @@ const renderTweets = function(tweets) {
   }
 };
 
+const validate = (text) => {
+  return (text === "" || text === null || text === undefined || text.trim() === "" || text.length > 140 || text.length === 0) ? false : true;
+};
+
+const loadTweets = () => {
+  $.get("/tweets").then(data => renderTweets(data));
+};
+
 $(function() {
   renderTweets(data);
+
+  $("#createTweet").on("submit", e => {
+    e.preventDefault();
+    if (validate($("#tweet-text").val())) {
+      const data = $(e.currentTarget).serialize();
+      console.log(data);
+      $.post("/tweets", data).done(data => loadTweets(data));
+      $("#tweet-text").val("");
+      $(".counter").text(140);
+    } else {
+      alert("Your tweet isn't between 1 to 140 characters.");
+    }
+  });
 });
