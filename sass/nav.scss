@@ -9,9 +9,16 @@ nav {
   padding-left: 1.5em;
   padding-right: 1.5em;
   z-index: 1;
+  @media only screen and (min-width: 1024px) {
+    background-color: indigo;
+  }
 
   &.scrolled {
     background: url('../images/black-thread-light.png'), #d79922;
+    @media only screen and (min-width: 1024px) {
+      background: none;
+      background-color: indigo;
+    }
   }
 
   > span {
@@ -35,7 +42,13 @@ nav {
 #main-head {
   padding-top: 120px;
   height: 400px;
-  width: 100vw;
+  @media only screen and (min-width: 1024px) {
+    width: 40%;
+    max-width: 400px;
+    margin-top: 300px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
   background: url('../images/black-thread-light.png'), #d79922;
 }
 

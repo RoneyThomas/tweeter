@@ -10,8 +10,19 @@ nav {
   padding-right: 1.5em;
   z-index: 1;
 }
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: indigo;
+  }
+}
 nav.scrolled {
   background: url("../images/black-thread-light.png"), #d79922;
+}
+@media only screen and (min-width: 1024px) {
+  nav.scrolled {
+    background: none;
+    background-color: indigo;
+  }
 }
 nav > span {
   font-family: "Bungee", cursive;
@@ -32,8 +43,16 @@ nav > span {
 #main-head {
   padding-top: 120px;
   height: 400px;
-  width: 100vw;
   background: url("../images/black-thread-light.png"), #d79922;
+}
+@media only screen and (min-width: 1024px) {
+  #main-head {
+    width: 40%;
+    max-width: 400px;
+    margin-top: 300px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 }
 
 #head {

@@ -25,15 +25,31 @@ body {
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-main {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+@media only screen and (max-width: 1023px) {
+  main {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    padding-top: 120px;
+    width: 60%;
+  }
 }
 
 .fab {
