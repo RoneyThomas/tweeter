@@ -3,33 +3,38 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+
+ html {
   box-sizing: border-box;
 }
 
 * {
   box-sizing: inherit;
+
+  &:before, &:after {
+    box-sizing: inherit;
+  }
+
   margin: 0;
   padding: 0;
-}
-*:before, *:after {
-  box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   scroll-behavior: smooth;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   width: 90%;
   margin-left: auto;
@@ -51,8 +56,9 @@ main {
   z-index: 1;
   right: 10px;
   bottom: 50px;
-}
-.fab:hover {
-  box-shadow: 0 6px 14px 0 #666;
-  transform: scale(1.05);
+
+  &:hover {
+    box-shadow: 0 6px 14px 0 #666;
+    transform: scale(1.05);
+  }
 }

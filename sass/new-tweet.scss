@@ -2,20 +2,22 @@ button {
   color: #fff;
   background-color: #4056A1;
   border: none;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   padding: 6px 14px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-}
-button:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
-  transform: translateY(-2px);
-}
-button:active {
-  box-shadow: none;
-  transform: translateY(0);
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
 }
 
 .new-tweet {
@@ -34,15 +36,19 @@ button:active {
   font-weight: bolder;
   padding-top: 36px;
   padding-bottom: 36px;
-}
-.new-tweet > form > label {
-  padding-bottom: 14px;
-}
-.new-tweet > form > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 14px;
+
+  > {
+    label {
+      padding-bottom: 14px;
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+    }
+  }
 }
 
 #tweet-text {
@@ -58,7 +64,7 @@ button:active {
 }
 
 .counter {
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   font-size: 20px;
 }
 

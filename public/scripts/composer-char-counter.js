@@ -6,4 +6,12 @@ $(function() {
     counter.text(140 - currentLength);
     counter.toggleClass("counter-over-limit", currentLength > 140);
   });
+
+  $(".fab").hide();
+  $(".fab").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#error").offset().top
+    }, 1000);
+    $('#tweet-text').focus();
+  });
 });

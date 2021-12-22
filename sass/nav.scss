@@ -9,14 +9,16 @@ nav {
   padding-left: 1.5em;
   padding-right: 1.5em;
   z-index: 1;
-}
-nav.scrolled {
-  background: url("../images/black-thread-light.png"), #d79922;
-}
-nav > span {
-  font-family: "Bungee", cursive;
-  margin-top: auto;
-  margin-bottom: auto;
+
+  &.scrolled {
+    background: url('../images/black-thread-light.png'), #d79922;
+  }
+
+  > span {
+    font-family: 'Bungee', cursive;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
 
 #new-tweet {
@@ -24,16 +26,17 @@ nav > span {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-#new-tweet h3 {
-  margin-block-end: 0.2em;
+
+  h3 {
+    margin-block-end: 0.2em;
+  }
 }
 
 #main-head {
   padding-top: 120px;
   height: 400px;
   width: 100vw;
-  background: url("../images/black-thread-light.png"), #d79922;
+  background: url('../images/black-thread-light.png'), #d79922;
 }
 
 #head {
@@ -61,18 +64,20 @@ nav > span {
     -ms-transform: translateY(0);
     transform: translateY(0);
   }
+
   60% {
     -webkit-transform: translateY(5px);
     -ms-transform: translateY(5px);
     transform: translateY(5px);
   }
 }
+
 #arrow {
   align-items: center;
   margin-top: 60px;
   color: #FFF8DC;
   position: absolute;
-  transition: color 0.2s;
+  transition: color .2s;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -81,10 +86,11 @@ nav > span {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
-}
-#arrow:hover {
-  cursor: pointer;
-  color: red;
-  animation-name: bounce;
-  -moz-animation-name: bounce;
+
+  &:hover {
+    cursor: pointer;
+    color: red;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+  }
 }
