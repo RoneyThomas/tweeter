@@ -14,6 +14,11 @@ Tweeter is a simple, single-page Twitter clone build using jQuery, HTML5, SCSS.
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Screenshots
+!["Tweeter Desktop"](https://github.com/RoneyThomas/tweeter/blob/master/docs/1.png?raw=true)
+!["Tweeter Tablet"](https://github.com/RoneyThomas/tweeter/blob/master/docs/2.png?raw=true)
+!["Tweeter Mobile"](https://github.com/RoneyThomas/tweeter/blob/master/docs/3.png?raw=true)
+
 ## Dependencies
 
 - Express
