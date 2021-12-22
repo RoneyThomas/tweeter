@@ -1,17 +1,11 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-
- html {
-  box-sizing: border-box;
-}
+@import "./colors.scss";
+@import "./font.scss";
 
 * {
   box-sizing: inherit;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     box-sizing: inherit;
   }
 
@@ -19,15 +13,79 @@
   padding: 0;
 }
 
-/*
- * Global layout stuff
- */
+// Mixin for resposnive font size
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+html {
+  box-sizing: border-box;
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+
+$mod_1: 1.2; // mobile
+$mod_2: 1.5; // desktop
+
+h1 {
+  font-size: $mod_1 * $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $mod_2 * $min_font
+  );
+}
+h2 {
+  font-size: $mod_1 * $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $mod_2 * $min_font
+  );
+}
+h3 {
+  font-size: $mod_1 * $mod_1 * 1rem;
+  @include fluid-type(
+    $min_width,
+    $max_width,
+    $mod_1 * $mod_1 * $min_font,
+    $mod_2 * $mod_2 * $min_font
+  );
+}
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  color: $base-color;
+  background-color: $background-color;
+  font-family: $font-primary;
   scroll-behavior: smooth;
 
   display: flex;
@@ -39,8 +97,8 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+  * Additional CSS can be defined below or in other CSS files, as per instructions
+  */
 
 main {
   @media only screen and (max-width: 1023px) {
@@ -51,19 +109,22 @@ main {
   @media only screen and (min-width: 1024px) {
     padding-top: 120px;
     width: 60%;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
+// Floating action button to scroll to top
 .fab {
   width: 60px;
   height: 60px;
-  background-color: red;
+  background-color: $fab-background-color;
   border-radius: 50%;
-  box-shadow: 0 6px 10px 0 #666;
+  box-shadow: 0 6px 10px 0 $fab-box-shadow;
   transition: all 0.1s ease-in-out;
   padding-top: 6px;
   font-size: 45px;
-  color: white;
+  color: $tweet-button-text;
   text-align: center;
   position: fixed;
   z-index: 1;
@@ -71,7 +132,7 @@ main {
   bottom: 50px;
 
   &:hover {
-    box-shadow: 0 6px 14px 0 #666;
+    box-shadow: 0 6px 14px 0 $fab-box-shadow;
     transform: scale(1.05);
   }
 }

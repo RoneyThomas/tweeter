@@ -1,12 +1,3 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
-  box-sizing: border-box;
-}
-
 * {
   box-sizing: inherit;
   margin: 0;
@@ -16,13 +7,89 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+html {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(
+          16px + 8 *
+            ((100vw - 320px) / 880)
+        );
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+h1 {
+  font-size: 2.0736rem;
+}
+h1 {
+  font-size: 27.648px;
+}
+@media screen and (min-width: 320px) {
+  h1 {
+    font-size: calc(
+          27.648px + 26.352 *
+            ((100vw - 320px) / 880)
+        );
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 54px;
+  }
+}
+
+h2 {
+  font-size: 1.728rem;
+}
+h2 {
+  font-size: 27.648px;
+}
+@media screen and (min-width: 320px) {
+  h2 {
+    font-size: calc(
+          27.648px + 26.352 *
+            ((100vw - 320px) / 880)
+        );
+  }
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 54px;
+  }
+}
+
+h3 {
+  font-size: 1.44rem;
+}
+h3 {
+  font-size: 23.04px;
+}
+@media screen and (min-width: 320px) {
+  h3 {
+    font-size: calc(
+          23.04px + 12.96 *
+            ((100vw - 320px) / 880)
+        );
+  }
+}
+@media screen and (min-width: 1200px) {
+  h3 {
+    font-size: 36px;
+  }
+}
+
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  color: #fffffe;
+  background-color: #abd1c6;
   font-family: "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
   display: flex;
@@ -36,8 +103,8 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+  * Additional CSS can be defined below or in other CSS files, as per instructions
+  */
 @media only screen and (max-width: 1023px) {
   main {
     max-width: 90%;
@@ -49,19 +116,21 @@ body {
   main {
     padding-top: 120px;
     width: 60%;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
 .fab {
   width: 60px;
   height: 60px;
-  background-color: red;
+  background-color: #f9bc60;
   border-radius: 50%;
   box-shadow: 0 6px 10px 0 #666;
   transition: all 0.1s ease-in-out;
   padding-top: 6px;
   font-size: 45px;
-  color: white;
+  color: #001e1d;
   text-align: center;
   position: fixed;
   z-index: 1;

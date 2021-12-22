@@ -1,13 +1,17 @@
+@import "./colors.scss";
+@import "./font.scss";
+
 button {
-  color: #fff;
-  background-color: #4056A1;
+  color: $tweet-button-text;
+  background-color: $tweet-button;
   border: none;
-  font-family: 'Bungee', cursive;
+  border-radius: 3px;
+  font-family: $font-secondary;
   padding: 6px 14px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: $tweet-button-size;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
@@ -22,52 +26,56 @@ button {
 
 .new-tweet {
   padding-top: 24px;
-}
+  > h2 {
+    color: $text-heading-color;
+  }
+  > form {
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    color: $text-subheading-color;
 
-#error {
-  display: none;
-  border: 4px dashed red;
-  padding: 8px;
-}
+    > {
+      label {
+        padding-bottom: 14px;
+      }
 
-.new-tweet > form {
-  display: flex;
-  flex-direction: column;
-  font-weight: bolder;
-  padding-top: 36px;
-  padding-bottom: 36px;
+      #tweet-text {
+        outline: none;
+        resize: none;
+        border: none;
+        background-color: $background-color;
+        border-bottom: 2px solid $tweet-border;
+        height: 60px;
+        font-size: $tweet-text-size;
+        font-weight: bold;
+        color: $text-subheading-color;
+      }
 
-  > {
-    label {
-      padding-bottom: 14px;
-    }
-
-    div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 14px;
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 14px;
+      }
     }
   }
 }
 
-#tweet-text {
-  outline: none;
-  resize: none;
-  border: none;
-  background-color: #f4f1ec;
-  border-bottom: 2px solid #545149;
-  height: 60px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #545149;
+#error {
+  display: none;
+  color: $error-color;
+  border: 4px dashed $error-color;
+  padding: 8px;
 }
 
 .counter {
-  font-family: 'Bungee', cursive;
-  font-size: 20px;
+  font-family: $font-secondary;
+  font-size: $counter-size;
 }
 
 .counter-over-limit {
-  color: red;
+  color: $error-color;
 }

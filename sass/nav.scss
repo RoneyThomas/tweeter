@@ -1,3 +1,6 @@
+@import "./colors.scss";
+@import "./font.scss";
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -5,24 +8,24 @@ nav {
   position: fixed;
   width: 100vw;
   height: 120px;
-  color: #FFFFFF;
+  color: $text-white;
   padding-left: 1.5em;
   padding-right: 1.5em;
   z-index: 1;
   @media only screen and (min-width: 1024px) {
-    background-color: indigo;
+    background-color: $nav-background-color;
   }
 
   &.scrolled {
-    background: url('../images/black-thread-light.png'), #d79922;
+    background: $nav-background-color;
     @media only screen and (min-width: 1024px) {
       background: none;
-      background-color: indigo;
+      background-color: $nav-background-color;
     }
   }
 
   > span {
-    font-family: 'Bungee', cursive;
+    font-family: $font-secondary;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -37,6 +40,29 @@ nav {
   h3 {
     margin-block-end: 0.2em;
   }
+
+  #arrow {
+    align-items: center;
+    margin-top: 60px;
+    color: $text-white;
+    position: absolute;
+    transition: color 0.2s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+  
+    &:hover {
+      cursor: pointer;
+      color: $fab-background-color;
+      animation-name: bounce;
+      -moz-animation-name: bounce;
+    }
+  }
 }
 
 #main-head {
@@ -48,31 +74,36 @@ nav {
     margin-top: 300px;
     margin-left: 40px;
     margin-right: 40px;
+    border-radius: 3px;
   }
-  background: url('../images/black-thread-light.png'), #d79922;
-}
+  background: url("../images/black-thread-light.png"), $profile-background-color;
 
-#head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #FFFFFF;
-}
+  #head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $base-color;
 
-#main-head #head div > img {
-  display: block;
-  max-width: 60%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
+    div > img {
+      display: block;
+      max-width: 60%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.light-last-word {
-  font-weight: normal;
+    .light-last-word {
+      font-weight: normal;
+    }
+  }
 }
 
 @keyframes bounce {
-  0%, 100%, 20%, 50%, 80% {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -82,28 +113,5 @@ nav {
     -webkit-transform: translateY(5px);
     -ms-transform: translateY(5px);
     transform: translateY(5px);
-  }
-}
-
-#arrow {
-  align-items: center;
-  margin-top: 60px;
-  color: #FFF8DC;
-  position: absolute;
-  transition: color .2s;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-
-  &:hover {
-    cursor: pointer;
-    color: red;
-    animation-name: bounce;
-    -moz-animation-name: bounce;
   }
 }

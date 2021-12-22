@@ -5,23 +5,23 @@ nav {
   position: fixed;
   width: 100vw;
   height: 120px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-left: 1.5em;
   padding-right: 1.5em;
   z-index: 1;
 }
 @media only screen and (min-width: 1024px) {
   nav {
-    background-color: indigo;
+    background-color: #004643;
   }
 }
 nav.scrolled {
-  background: url("../images/black-thread-light.png"), #d79922;
+  background: #004643;
 }
 @media only screen and (min-width: 1024px) {
   nav.scrolled {
     background: none;
-    background-color: indigo;
+    background-color: #004643;
   }
 }
 nav > span {
@@ -39,11 +39,32 @@ nav > span {
 #new-tweet h3 {
   margin-block-end: 0.2em;
 }
+#new-tweet #arrow {
+  align-items: center;
+  margin-top: 60px;
+  color: #ffffff;
+  position: absolute;
+  transition: color 0.2s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+#new-tweet #arrow:hover {
+  cursor: pointer;
+  color: #f9bc60;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+}
 
 #main-head {
   padding-top: 120px;
   height: 400px;
-  background: url("../images/black-thread-light.png"), #d79922;
+  background: url("../images/black-thread-light.png"), #004643;
 }
 @media only screen and (min-width: 1024px) {
   #main-head {
@@ -52,16 +73,15 @@ nav > span {
     margin-top: 300px;
     margin-left: 40px;
     margin-right: 40px;
+    border-radius: 3px;
   }
 }
-
-#head {
+#main-head #head {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #FFFFFF;
+  color: #fffffe;
 }
-
 #main-head #head div > img {
   display: block;
   max-width: 60%;
@@ -69,8 +89,7 @@ nav > span {
   margin-left: auto;
   margin-right: auto;
 }
-
-.light-last-word {
+#main-head #head .light-last-word {
   font-weight: normal;
 }
 
@@ -85,25 +104,4 @@ nav > span {
     -ms-transform: translateY(5px);
     transform: translateY(5px);
   }
-}
-#arrow {
-  align-items: center;
-  margin-top: 60px;
-  color: #FFF8DC;
-  position: absolute;
-  transition: color 0.2s;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-#arrow:hover {
-  cursor: pointer;
-  color: red;
-  animation-name: bounce;
-  -moz-animation-name: bounce;
 }

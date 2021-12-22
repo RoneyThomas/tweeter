@@ -1,13 +1,14 @@
 button {
-  color: #fff;
-  background-color: #4056A1;
+  color: #001e1d;
+  background-color: #f9bc60;
   border: none;
+  border-radius: 3px;
   font-family: "Bungee", cursive;
   padding: 6px 14px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 0.8rem;
 }
 button:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
@@ -21,22 +22,30 @@ button:active {
 .new-tweet {
   padding-top: 24px;
 }
-
-#error {
-  display: none;
-  border: 4px dashed red;
-  padding: 8px;
+.new-tweet > h2 {
+  color: #001e1d;
 }
-
 .new-tweet > form {
   display: flex;
   flex-direction: column;
   font-weight: bolder;
   padding-top: 36px;
   padding-bottom: 36px;
+  color: #0f3433;
 }
 .new-tweet > form > label {
   padding-bottom: 14px;
+}
+.new-tweet > form > #tweet-text {
+  outline: none;
+  resize: none;
+  border: none;
+  background-color: #abd1c6;
+  border-bottom: 2px solid #004643;
+  height: 60px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #0f3433;
 }
 .new-tweet > form > div {
   display: flex;
@@ -45,23 +54,18 @@ button:active {
   padding-top: 14px;
 }
 
-#tweet-text {
-  outline: none;
-  resize: none;
-  border: none;
-  background-color: #f4f1ec;
-  border-bottom: 2px solid #545149;
-  height: 60px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #545149;
+#error {
+  display: none;
+  color: #e16162;
+  border: 4px dashed #e16162;
+  padding: 8px;
 }
 
 .counter {
   font-family: "Bungee", cursive;
-  font-size: 20px;
+  font-size: 0.8rem;
 }
 
 .counter-over-limit {
-  color: red;
+  color: #e16162;
 }
