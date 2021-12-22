@@ -3,31 +3,31 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd"
+//     },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ];
 
 const createTweetElement = (tweet) => {
   let timeagoInst = new timeago();
@@ -65,23 +65,40 @@ const validate = (text) => {
   return (text === "" || text === null || text === undefined || text.trim() === "" || text.length > 140 || text.length === 0) ? false : true;
 };
 
+const validateError = (text) => {
+  if (text === "" || text === null || text === undefined || text.trim() === "") {
+    return "🛑 Empty Tweet ❌";
+  } else {
+    return "😬 Tweet length too long. Please stay within 140 characters ❌";
+  }
+};
+
 const loadTweets = () => {
   $.get("/tweets").then(data => renderTweets(data));
 };
 
 $(function() {
-  renderTweets(data);
+  loadTweets();
 
   $("#createTweet").on("submit", e => {
     e.preventDefault();
     if (validate($("#tweet-text").val())) {
+      $("#error").slideUp();
       const data = $(e.currentTarget).serialize();
       console.log(data);
       $.post("/tweets", data).done(data => loadTweets(data));
       $("#tweet-text").val("");
       $(".counter").text(140);
     } else {
-      alert("Your tweet isn't between 1 to 140 characters.");
+      $("#error").text(validateError($("#tweet-text").val()));
+      $("#error").slideDown();
     }
+  });
+
+  $("#arrow").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#error").offset().top
+    }, 2000);
+    $('#tweet-text').focus();
   });
 });

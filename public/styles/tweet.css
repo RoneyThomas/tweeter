@@ -27,14 +27,14 @@ article header .profile :first-child{
 }
 
 article header .handle {
-  opacity: 75%;
+  /* opacity: 75%; */
 }
 
 article .tweet-text {
   padding: 0px 0px 16px 0px;
   /* font-size: 24px; */
   font-weight: 600;
-  opacity: 85%;
+  /* opacity: 85%; */
 }
 
 article footer hr {

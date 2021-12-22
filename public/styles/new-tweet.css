@@ -24,6 +24,12 @@ button:active {
   padding-top: 24px;
 }
 
+#error {
+  display: none;
+  border: 4px dashed red;
+  padding: 8px;
+}
+
 .new-tweet > form {
   display: flex;
   flex-direction: column;
