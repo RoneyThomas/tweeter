@@ -16,8 +16,14 @@ Tweeter is a simple, single-page Twitter clone build using jQuery, HTML5, SCSS.
 
 ## Screenshots
 !["Tweeter Desktop"](https://github.com/RoneyThomas/tweeter/blob/master/docs/1.png?raw=true)
+
 !["Tweeter Tablet"](https://github.com/RoneyThomas/tweeter/blob/master/docs/2.png?raw=true)
+
 !["Tweeter Mobile"](https://github.com/RoneyThomas/tweeter/blob/master/docs/3.png?raw=true)
+
+!["Tweet Error"](https://github.com/RoneyThomas/tweeter/blob/master/docs/4.png?raw=true)
+
+!["Tweeter Floating Action Button"](https://github.com/RoneyThomas/tweeter/blob/master/docs/5.png?raw=true)
 
 ## Dependencies
 
