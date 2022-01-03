@@ -14,7 +14,7 @@ button {
   font-size: $tweet-button-size;
 
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 16px;
+    box-shadow: $button-box-shadow-color 0 8px 16px;
     transform: translateY(-2px);
   }
 
