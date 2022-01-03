@@ -1,6 +1,9 @@
 const createTweetElement = (tweet) => {
+  // timeago used for better date formatting
   let timeagoInst = new timeago();
 
+  // Using jQuery .text method to encode tweet to avoid XSS
+  // Using <p class="name">${tweet.user.name}</p> can cause XSS
   const $userName = $('<p></p>').addClass('name').text(tweet.user.name);
   const $userHandle = $('<p></p>').addClass('handle').text(tweet.user.handle);
   const $tweetText = $('<p></p>').addClass('tweet-text').text(tweet.content.text);
@@ -24,24 +27,26 @@ const createTweetElement = (tweet) => {
 };
 
 const renderTweets = (tweets) => {
-  console.log(tweets, $("#tweet-container").contents().length);
+  // If we already have tweets rendered
+  // then only render the last created tweet
   if ($("#tweet-container").contents().length > 1) {
     const $tweet = createTweetElement(tweets[0]);
-    console.log($tweet);
     $("#tweet-container").prepend($tweet);
   } else {
+    // If there are no tweets rendered then render all tweets.
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $("#tweet-container").append($tweet);
     }
   }
-  console.log(tweets, $("#tweet-container").contents().length);
 };
 
+// Check if tweet is valid, mainly checking if the tweet is empty or over the limit.
 const validate = (text) => {
   return (text === "" || text === null || text === undefined || text.trim() === "" || text.length > 140 || text.length === 0) ? false : true;
 };
 
+// Our tweet failed validate func, now return the error to be displayed
 const validateError = (text) => {
   if (text === "" || text === null || text === undefined || text.trim() === "") {
     return "🛑 Empty Tweet ❌";
@@ -50,12 +55,16 @@ const validateError = (text) => {
   }
 };
 
+// Load tweets and renders them based last added to first
 const loadTweets = () => {
   $.get("/tweets").then(data => renderTweets(data.reverse()));
 };
 
-$(function() {
+$(() => {
+  // Loads the tweets when page is ready
   loadTweets();
+
+  // Form handler for create tweet
   $("#createTweet").on("submit", e => {
     e.preventDefault();
     // Check for error before posting to server
@@ -71,22 +80,22 @@ $(function() {
       $("#error").text(validateError($("#tweet-text").val()));
       $("#error").slideDown();
       // Removes error message after 2.5 seconds
-      setTimeout(function() {
+      setTimeout(() => {
         $("#error").slideUp();
       }, 2500);
     }
   });
 
   // Scroll to write a new tweet
-  $("#arrow").click(function() {
+  $("#arrow").click(() => {
     $('html, body').animate({
       scrollTop: $("#error").offset().top
     }, 1000);
     $('#tweet-text').focus();
   });
 
-  // Scroll to top
-  $(window).scroll(function() {
+  // Scroll to the top
+  $(window).scroll(() => {
     let fromTopPx = 310; // distance to trigger
     let scrolledFromtop = $(window).scrollTop();
     if (scrolledFromtop > fromTopPx) {

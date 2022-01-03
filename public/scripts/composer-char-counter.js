@@ -1,4 +1,5 @@
-$(function() {
+// jQuery function to count tweet char length and display it on page.
+$(() => {
   $("#tweet-text").on("input", function() {
     let currentLength = $(this).val().length;
     let counter = $(this).siblings("div").children("output.counter");
